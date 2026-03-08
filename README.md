@@ -1,2 +1,25 @@
-# R-programming-Code-Template-
-R Programming Code Template contains reusable R scripts for common data analysis tasks such as descriptive statistics, chi-square tests, t-tests, data mutation, filtering, column creation/removal, and BMI calculation. It serves as a quick reference for efficient data cleaning and statistical analysis in R.
+# R Programming Code Template
+
+## Overview
+This repository contains reusable R code templates for common data analysis tasks.
+
+## Topics Covered
+- Descriptive statistics
+- Chi-square test
+- T-test
+- Data mutation
+- Data filtering
+- Adding and removing columns
+- BMI calculation
+
+## Tools
+- R
+- RStudio
+- tidyverse
+- dplyr
+
+## Purpose
+To provide simple and reusable R scripts that help streamline data cleaning, transformation, and statistical analysis.
+
+## Author
+Adaobi Roseline Ezechukwu
