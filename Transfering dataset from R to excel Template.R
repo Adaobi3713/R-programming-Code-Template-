@@ -1,0 +1,13 @@
+library(gt)
+library(tidyverse)
+library(gtsummary)
+library(flextable)
+library(sjPlot)
+library(dplyr)
+library(ggplot2)
+library(dlookr)
+write.csv(ar, "exportCSV. CSV", row.names = FALSE)
+ar <- as.data.frame(ar)
+View(ar)
+# Export to xlsx format
+write.csv(ar, file = "ar.csv")

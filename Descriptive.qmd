@@ -1,0 +1,100 @@
+---
+title: "Descriptive statistics of heavy metal"
+format: docx
+editor: visual
+execute: 
+  echo: false
+  warning: false
+  massage: false
+---
+
+## Frequency Distribution
+
+```{r}
+library(gt)
+library(tidyverse)
+library(gtsummary)
+library(flextable)
+library(sjPlot)
+library(dplyr)
+library(ggplot2)
+library(readxl)
+df <- read_excel("heavy metal data cleaned.xlsx", 
+    na = "99")
+df %>% select(BMI, Age, Residence, Level_of_Education) %>% 
+ tbl_summary(
+statistic = list(
+all_categorical() ~ "{n} ({p}%)",
+all_continuous() ~ "{mean} ({sd})"
+),
+label = list(
+Level_of_Education ~ "Level of Education"
+),
+missing_text = "Non-responders"
+) %>%
+bold_labels() %>%
+as_flex_table() 
+```
+
+## Descriptive Statistics
+
+```{r}
+df <- read_excel("heavy metal data cleaned.xlsx", 
+    na = "99")
+df %>% select(PSA, Zn, Co, Ni, Se) %>% 
+ tbl_summary(
+statistic = list(
+all_categorical() ~ "{n} ({p}%)",
+all_continuous() ~ "{mean} ({sd})"
+),
+label = list(
+Zn ~ "Zinc", Co ~ "Cobalt", Se ~ "Selenium",
+Ni ~ "Nickel"
+),
+missing_text = "Non-responders"
+) %>%
+bold_labels() %>%
+as_flex_table() 
+```
+
+### Summary statistics of PSA and Heavy metals in Control Group
+
+```{r}
+ df%>% filter(group == "control") %>% select(PSA, Zn, Co, Ni, Se) %>%
+   tbl_summary(
+statistic = list(
+all_categorical() ~ "{n} ({p}%)",
+all_continuous() ~ "{mean} ({sd})"
+),
+label = list(
+Zn ~ "Zinc", Co ~ "Cobalt", Se ~ "Selenium",
+Ni ~ "Nickel"
+),
+missing_text = "Non-responders"
+) %>%
+bold_labels() %>%
+as_flex_table() 
+```
+
+### Summary statistics of PSA and Heavy metals in Prostate cancer patient
+
+```{r}
+ df%>% filter(group == "pca") %>% select(PSA, Zn, Co, Ni, Se) %>%
+   tbl_summary(
+statistic = list(
+all_categorical() ~ "{n} ({p}%)",
+all_continuous() ~ "{mean} ({sd})"
+),
+label = list(
+Zn ~ "Zinc", Co ~ "Cobalt", Se ~ "Selenium",
+Ni ~ "Nickel"
+),
+missing_text = "Non-responders"
+) %>%
+bold_labels() %>%
+as_flex_table() 
+```
+
+```{r}
+
+```
